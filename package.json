@@ -1,0 +1,30 @@
+{
+  "name": "@ladybug-tools/spider-core",
+  "version": "0.0.0",
+  "description": "A lightweight module containing the core data parsing  and rendering functions of Spider",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "docs": "./node_modules/.bin/jsdoc lib",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [
+    "spider"
+  ],
+  "author": "Ladybug-tools",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.102.1",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "jsdoc": "^3.5.5",
+    "mocha": "^6.0.2"
+  }
+}

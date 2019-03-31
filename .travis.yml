@@ -1,10 +1,11 @@
 language: node_js
 node_js:
 - '8'
-script:
-- npm test
+
 jobs:
   include:
+  - stage: test
+    script: npm test
   - stage: deploy
     if: branch = master AND (NOT type IN (pull_request))
     script: npm run semantic-release

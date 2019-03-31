@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- '8'
+script:
+- npm test
+jobs:
+  include:
+  - stage: deploy
+    if: branch = master AND (NOT type IN (pull_request))
+    script: npm run semantic-release
+  - stage: docs
+    if: branch = master AND (NOT type IN (pull_request))
+    script: npm run docs
+    deploy:
+      provider: pages
+      skip_cleanup: true
+      github-token: $GH_TOKEN
+      keep-history: true
+      local_dir: out/
+      on:
+        branch: master
+env:
+  global:
+  - secure: oo4gDXVzYCUrffQwvgBhXEJwauqeQyn5qnWiCCnkfuM/wXCKzS1uC2CozLY0it+kjk7tHVlwmlAjUY33RhxwL+eEiaNY7A6tC0PDrplRSaKdygAMG+LGa8WAxNtyOybgJ0duvQ8EgDZpoaqFNVq5lWxHPklZ6xVfaA7uMkxsVuVTq/o2D8BEedHjky6aM19/YDAlTtJeKBSW0tfqTVYc44SUQ6xz1C6sYbdO2P9P0DpNTp369n5/xRVYEIcUTgeKhm4jxVUzzDFjSd4onvFRw4U6YSleLjk8cIVa3kTwx9rbtuMzoyikS0QQs4MpClsyKjYCTXHzw3R8MyiQ9iSyAcVu3HrzUSj19riZmVptVTiakcByUoHlaPUfqDZrZl5WZVKcAUrB9AJAeohySAhJhP/EYJAbVvplf1jk8T5PuH4+8Hx5Fg1rb9CZ9KqzU9YPBuDhX2Ad947urxOrDdq3pR6xiqSz6lQDaVwGx8u33bBmbaql7qmjcAa0TkE0rKn5BWKaoEeaHKB09YNsgM0Ot6+vAh1PEjev/E2K6R1TriitXfRGcv78cfauV/rfwusDLzl4089NgFZt+ntej9Al1WOvslNna79xY97V01StmbAjnBS0DFJsi+hWbfQ235XrlftpFrxkOcgA40xBXPy2qPyVXG7Xsw6wNBjFP6z1Oeo=
+  - secure: g7+Yy723/yr8/ZcCScESlnhAgDheHPhRSw8mepS4SuOcv3zrLcKvgSfMwsAvoXMLDXDJA7fH/jpcDNrsXzta7Z5BoeHGAPlgOCS0yc0zh7YcLvl1YXjRHgjajGP3nUGoCsZgDihGocCL4Wfyzhm3MV2aQWBnjLcBs5h0oFDh8BFfsgKvYwRefg5b6yAE/koThRE9oI2a3lhS2g9a34ntxLOqclPeDWVU+X6UnKMvQNm1S2tFXwvFX57o3DyRPCDLWeHnrebFDREiVKxspPbjeprP4oSZ4sgbJQxc+/8ku7HuGEKrCxsJugk7I3bTjuv8caRVUeEoDZ83mbExb04h3Rhk3XZVA+ZI72Eicq5VjwuweR/4QAnd/sLiKi9O1KjQc0a/58WwCThaCCvoGu+5ZUpS6AF1Vxw0Yb9LFhnwudKSOHvtznO82RB42iYR49fG3agSWc6s+WUHud99jq2UT8/f6m91zyh7uZCzCSVHeIN3SJr4IMHlE/x086Y8pO1ACKDWEfyPEqqJi/A+CFpPjPmzko0iIuFrfTk7VcVBngc2e7O/nVzAxnl/GJRzrfdyoNHe//a6X8V8LKA3AOOAKnRvSCf3saF+Tk77RxbxBwatVANdRyETUbBcLr8y9DzRYZoGYFBshbElMWWey8/uo2j++LiWAZa0lpx9a0Xp9q8=

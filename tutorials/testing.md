@@ -1,0 +1,3 @@
+We use [mocha](https://mochajs.org/) to write our unit tests. You can find the lastest tests we have written [here](https://github.com/ladybug-tools/spider-core/tree/master/test).
+
+We use [Travis-CI](https://travis-ci.org/) to run tests on all PRs and Merges into the master branch as well as deploy to NPM once changes are committed to the Master branch. You can view the latest series of tests run on Travis [here](https://travis-ci.org/ladybug-tools/spider-core).

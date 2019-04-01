@@ -1,0 +1,22 @@
+ {
+   "getting-started": {
+     "title": "Getting Started"
+   },
+   "contributing": {
+     "title": "Contributing",
+     "children": {
+       "local-development": {
+         "title": "Local Development"
+       },
+       "styleguide": {
+         "title": "StyleGuide"
+       },
+       "testing": {
+         "title": "Testing"
+       },
+       "documenting": {
+         "title": "Documenting"
+       }
+     }
+   }
+ }

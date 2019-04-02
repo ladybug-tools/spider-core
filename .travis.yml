@@ -2,6 +2,10 @@ language: node_js
 node_js:
 - '8'
 
+before_install:
+- git config --global user.email "releases@ladybug.tools"
+- git config --global user.name "ladybugbot" 
+
 jobs:
   include:
   - stage: test
@@ -11,15 +15,12 @@ jobs:
     script: npm run semantic-release
   - stage: docs
     if: branch = master AND (NOT type IN (pull_request))
-    script: npm run docs
-    deploy:
-      provider: pages
-      skip_cleanup: true
-      github-token: $GH_TOKEN
-      keep-history: true
-      local_dir: out/
-      on:
-        branch: master
+    script:
+    - npm run docs
+    - npm run gh-pages
+    env:
+    - RELEASE_VERSION=latest
+
 env:
   global:
   - secure: oo4gDXVzYCUrffQwvgBhXEJwauqeQyn5qnWiCCnkfuM/wXCKzS1uC2CozLY0it+kjk7tHVlwmlAjUY33RhxwL+eEiaNY7A6tC0PDrplRSaKdygAMG+LGa8WAxNtyOybgJ0duvQ8EgDZpoaqFNVq5lWxHPklZ6xVfaA7uMkxsVuVTq/o2D8BEedHjky6aM19/YDAlTtJeKBSW0tfqTVYc44SUQ6xz1C6sYbdO2P9P0DpNTp369n5/xRVYEIcUTgeKhm4jxVUzzDFjSd4onvFRw4U6YSleLjk8cIVa3kTwx9rbtuMzoyikS0QQs4MpClsyKjYCTXHzw3R8MyiQ9iSyAcVu3HrzUSj19riZmVptVTiakcByUoHlaPUfqDZrZl5WZVKcAUrB9AJAeohySAhJhP/EYJAbVvplf1jk8T5PuH4+8Hx5Fg1rb9CZ9KqzU9YPBuDhX2Ad947urxOrDdq3pR6xiqSz6lQDaVwGx8u33bBmbaql7qmjcAa0TkE0rKn5BWKaoEeaHKB09YNsgM0Ot6+vAh1PEjev/E2K6R1TriitXfRGcv78cfauV/rfwusDLzl4089NgFZt+ntej9Al1WOvslNna79xY97V01StmbAjnBS0DFJsi+hWbfQ235XrlftpFrxkOcgA40xBXPy2qPyVXG7Xsw6wNBjFP6z1Oeo=

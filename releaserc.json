@@ -1,0 +1,11 @@
+{
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/npm",
+        "@semantic-release/git",
+        ["@semantic-release/exec", {
+            "publishCmd": "export RELEASE_VERSION=${nextRelease.version} && npm run docs && npm run gh-pages"
+        }]
+    ]
+}

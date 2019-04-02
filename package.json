@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
-    "docs": "./node_modules/.bin/jsdoc lib",
-    "semantic-release": "semantic-release"
+    "docs": "./node_modules/.bin/jsdoc lib/ --readme README.md --package package.json -u tutorials/",
+    "semantic-release": "semantic-release",
+    "lint": "./node_modules/.bin/eslint lib/"
   },
   "keywords": [
     "spider"

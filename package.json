@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec",
-    "docs": "./node_modules/.bin/jsdoc lib/ --readme README.md -u tutorials/",
+    "docs": "./node_modules/.bin/jsdoc lib/ -c docs.json",
     "semantic-release": "semantic-release",
     "lint": "./node_modules/.bin/eslint lib/",
-    "gh-pages": "./node_modules/.bin/gh-pages --dist out/ --dest $RELEASE_VERSION --remove $RELEASE_VERSION --silent --repo https://$GH_TOKEN@github.com/ladybug-tools/spider-core.git"
+    "gh-pages": "./node_modules/.bin/gh-pages --dist out/ --dest docs/$RELEASE_VERSION --remove docs/$RELEASE_VERSION --repo https://$GH_TOKEN@github.com/ladybug-tools/spider-core.git"
   },
   "keywords": [
-    "spider"
+    "spider",
+    "gbxml",
+    "aec"
   ],
   "author": "Ladybug-tools",
   "license": "MIT",
@@ -28,6 +30,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
     "gh-pages": "^2.0.1",
+    "ink-docstrap": "^1.3.2",
     "jsdoc": "^3.5.5",
     "mocha": "^6.0.2",
     "semantic-release": "^15.13.3"

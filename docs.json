@@ -1,0 +1,11 @@
+{
+    "templates": {
+        "theme": "united",
+        "search": true
+    },
+    "opts": {
+        "template": "./node_modules/ink-docstrap/template",
+        "tutorials": "tutorials/",
+        "readme": "README.md"
+    }
+}

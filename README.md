@@ -33,10 +33,10 @@ console.log(JSON.stringify(gbXMLJson, null, 2));
 ```
 
 ### Documentation
-Full API documentation of the latest version of this package can be found [here](http://www.ladybug.tools/spider-core/docs/latest/).
+Full API documentation of the latest version of this package can be found [here](https://www.ladybug.tools/spider-core/docs/latest/).
 
 ### Contributing
-Contributions are most welcome! Please refere to the [contributing guide](http://www.ladybug.tools/spider-core/latest/tutorial-contributing.html) to help you get started.
+Contributions are most welcome! Please refere to the [contributing guide](https://www.ladybug.tools/spider-core/docs/latest/tutorial-contributing.html) to help you get started.
 
 ### Releases
 A list of releases and changes applied for each one can be found [here](https://github.com/ladybug-tools/spider-core/releases).

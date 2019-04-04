@@ -7,7 +7,7 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/ladybug-tools/spider-core/master/LICENSE)
 
 
-![Spider](https://raw.githubusercontent.com/ladybug-tools/artwork/master/icons_bugs/png/spiderborder.png)
+![Spider](https://raw.githubusercontent.com/ladybug-tools/artwork/master/icons_bugs/emoji/spider.png)
 
 ## Spider-Core
 Lightweight JavaScript modules containing the core data parsing and rendering functions of Spider.
@@ -25,7 +25,7 @@ The spider-core package aims to provide a data manipulation layer from which use
 const fs = require('fs');
 const Spider = require('@ladybug-tools/spider-core');
 
-const gbXMLString = fs.readFileSync('/path/to/file.gbxml');
+const gbXMLString = fs.readFileSync('/path/to/file.gbxml').toString();
 
 const gbXMLJson = Spider.gbXMLParser.parseFileXML(gbXMLString);
 

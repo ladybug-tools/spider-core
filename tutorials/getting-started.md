@@ -19,7 +19,7 @@ Write some code in index.js and run it. Copy paste the code below into `index.js
 const fs = require('fs');
 const Spider = require('@ladybug-tools/spider-core');
 
-const gbXMLString = fs.readFileSync('/path/to/file.gbxml');
+const gbXMLString = fs.readFileSync('/path/to/file.gbxml').toString();
 
 const gbXMLJson = Spider.gbXMLParser.parseFileXML(gbXMLString);
 

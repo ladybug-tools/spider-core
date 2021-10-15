@@ -7,7 +7,12 @@ We all have to start our coding, Javascript or NodeJS journey somewhere so why n
 * [NVM](https://github.com/coreybutler/nvm-windows) - Windows
 
 
-Once that's done you can start using NodeJS 11:
+Once `nvm` is installed, you may open a Windows command shell and start using NodeJS 11 by installing it using the following commands
+
+```console
+nvm install 11
+nvm use 11
+```
 ```console
 nvm install 11
 nvm use 11
@@ -16,7 +21,7 @@ Or
 ```console
 nvm install latest
 ```
-NVM will report to you the number of the reakease it has installed.
+`nvm` will report to you the number of the release it has installed.
 
 Or even set NodeJS 11 as your default:
 ```console
